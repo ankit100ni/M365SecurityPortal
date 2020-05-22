@@ -1,0 +1,26 @@
+{% extends "tutorial/layout.html" %}
+{% block content %}
+<h1>Alert</h1>
+<table class="table">
+ <thead>
+   <tr>
+     <th scope="col">userDisplayName</th>
+     <th scope="col">appDisplayName</th>
+     <th scope="col">ipAddress</th>
+     <th scope="col">clientAppUsed</th>
+   </tr>
+ </thead>
+ <tbody>
+   {% if events %}
+     {% for event in events %}
+       <tr>
+         <td>{{ event.organizer.userDisplayName.name }}</td>
+         <td>{{ event.appDisplayName }}</td>
+         <td>{{ event.ipAddress }}</td>
+         <td>{{ event.clientAppUsed }}</td>
+       </tr>
+     {% endfor %}
+   {% endif %}
+ </tbody>
+</table>
+{% endblock %}
